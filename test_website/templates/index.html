@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!--<img class="masthead-avatar mb-5" src="{% static 'theme/assets/img/avataaars.svg' %}" alt="" />-->
+
+<!-- Masthead-->
+<header class="masthead text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="{% static 'img/prayer.png' %}" alt="" />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Welcome to Appreci-8!</h1>
+    </div>
+</header>
+
+<h1>
+    Give thanks, appreciate your loved ones, and send great vibes.
+</h1>
+<h2>
+    All without any of the strings attached.
+</h2>
+
+<p>
+    Hi there! Genuine appreciation can be hard to come by, especially in our growing digital world. Now more than ever, it's important to let people know that you care.
+</p>
+<p>
+    By joining Appreci-8, you'll take the first step into letting your loved ones and people who've helped you know that you've been thinking of them and are wishing them well!
+</p>
+{% endblock %}
