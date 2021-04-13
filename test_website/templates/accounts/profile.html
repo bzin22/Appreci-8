@@ -2,7 +2,65 @@
 
 {% block title %}Profile{% endblock %}
 
+
 {% block content %}
+
+{% with profile=user.profile %}
+<div class="page-profile">
+    <div class="page-header header-filter"></div>
+    <div class="main main-raised">
+        <div class="profile-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <div class="profile">
+                            <div class="avatar">
+                                <div class="box-1-1">
+                                    <div class="profile-image-container img-raised img-fluid rounded-circle">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="name">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>
+                    {{ user.get_full_name }} (@{{ user.username }})
+                </h1>
+                {% with profile=user.profile %}
+                    {% if profile %}
+                        <h2>{{ profile.persona|default:"" }}</h2>
+                        <div>{{ profile.bio|default:"" }}</div>
+                        <div>
+                            {% with website=profile.website|default:"" %}
+                                <a href="{{website}}">{{ website }}</a>
+                            {% endwith %}
+                        </div>
+                        <br/>
+                        <div>
+                            Interests:
+                            {% for interest in profile.interests.all %}
+                                <span>
+                                    {{ interest.name }}{% if not forloop.last %}, {% endif %}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endwith %}}
+
+
+{% endblock %}
+
+
+<!--
 <h1>
     {{ user.get_full_name }} (@{{ user.username }})
 </h1>
@@ -26,6 +84,4 @@
             {% endfor %}
         </div>
     {% endif %}
-{% endwith %}
-
-{% endblock %}
+{% endwith %}-->

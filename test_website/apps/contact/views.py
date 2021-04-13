@@ -15,7 +15,7 @@ def contact(request: HttpRequest) -> HttpResponse:
             name = bleach.clean(form.cleaned_data["name"])
             email = bleach.clean(form.cleaned_data["email"])
             message = bleach.clean(form.cleaned_data["message"])
-            send_mail(f"{name} send an email", message, email, [settings.DEFAULT_FROM_EMAIL])
+            send_mail(f"{name} sent you a message!", message, email, [settings.DEFAULT_FROM_EMAIL])
             return render(request, 'contact.html', {"form": form, "success": True})
     else:
         raise NotImplementedError
