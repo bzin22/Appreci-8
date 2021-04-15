@@ -26,6 +26,12 @@ class UserProfile(models.Model):
 
     #details
     bio = models.CharField(max_length=500, blank=True, null=True)
-    website = models.URLField(max_length=200, blank=True, null=True)
     persona = models.ForeignKey(UserPersona, on_delete=models.SET_NULL, blank=True, null=True)
     interests = models.ManyToManyField(UserInterest, blank=True)
+
+    #Links (TODO: Validate Input)
+    website = models.URLField(max_length=200, blank=True, null=True)
+    linkedin_url = models.URLField(max_length=640, blank=True, null=True)
+    twitter_url = models.URLField(max_length=640, blank=True, null=True)
+    facebook_url = models.URLField(max_length=640, blank=True, null=True)
+
