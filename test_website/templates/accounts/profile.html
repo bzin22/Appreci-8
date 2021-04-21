@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Profile{% endblock %}
-
+{% block title %}User Profile{% endblock %}
 
 {% block content %}
 
 {% with profile=user.profile %}
+
 <div class="page-profile">
-    <div class="page-header header-filter"></div>
+    <div class="page-header header-filter">
     <div class="main main-raised">
         <div class="profile-content">
             <div class="container">
@@ -16,7 +16,7 @@
                         <div class="profile">
                             <div class="avatar">
                                 <div class="box-1-1">
-                                    <div class="profile-image-container img-raised img-fluid rounded-circle">
+                                    <div class="profile-image-container">
                                         <img src="http://tinygraphs.com/labs/isogrids/hexa16/Bryan?theme=bythepool&numcolors=4&size=220&fmt=svg" alt="Profile picture"
                                     </div>
                                 </div>
@@ -34,61 +34,38 @@
                                     {% if profile.facebook_url %}
                                         <a href="{{ profile.facebook_url }}" class="btn btn-just-icon btn-link"><i class="fab fa-facebook"></i></a>
                                     {% endif %}
+                                    <div class="description text-center">
+                                        {% with website=profile.website|default:"" %}
+                                            <a href="{{ website }}">{{ website }}</a>
+                                        {% endwith %}
+                                    </div>
+                                    <div class="description text-center">
+                                        Interests:
+                                        {% for interest in profile.interests.all %}
+                                            <span>
+                                                {{ interest.name }}{% if not forloop.last %}, {% endif %}
+                                            </span>
+                                        {% endfor %}
+                                    </dir>
+                                    <div class="description text-center">
+                                        <p>{{ profile.bio|default:"" }}</p>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
                 {% if profile %}
-                    <div class="description text-center">
-                        {% with website=profile.website|default:"" %}
-                            <a href="{{ website }}">{{ website }}</a>
-                        {% endwith %}
-                    </div>
-                    <div class="description text-center">
-                        Interests:
-                        {% for interest in profile.interests.all %}
-                            <span>
-                                {{ interest.name }}{% if not forloop.last %}, {% endif %}
-                            </span>
-                        {% endfor %}
-                    </div>
-                <div class="description text-center">
-                    <p>{{ profile.bio|default:"" }}</p>
-                </div>
                 {% endif %}
+                <br/>
             </div>
         </div>
     </div>
+        </div>
 </div>
-{% endwith %}}
+{% endwith %}
 
 
 {% endblock %}
 
 
-<!--
-<h1>
-    {{ user.get_full_name }} (@{{ user.username }})
-</h1>
-
-{% with profile=user.profile %}
-    {% if profile %}
-        <h2>{{ profile.persona|default:"" }}</h2>
-        <div>{{ profile.bio|default:"" }}</div>
-        <div>
-            {% with website=profile.website|default:"" %}
-                <a href="{{website}}">{{ website }}</a>
-            {% endwith %}
-        </div>
-        <br/>
-        <div>
-            Interests:
-            {% for interest in profile.interests.all %}
-                <span>
-                    {{ interest.name }}{% if not forloop.last %}, {% endif %}
-                </span>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endwith %}-->

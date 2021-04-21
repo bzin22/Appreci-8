@@ -19,6 +19,10 @@
     font-family: "Bryan's Website";
 }
 
+h2.page-section-heading{
+    padding-top: 25px!important;
+}
+
 .hs-bg-primary{
     background-color: #f35a5a;
 }
@@ -68,5 +72,5 @@
 }
 
 .masthead-heading{
-    color: black;
+    color: white;
 }
