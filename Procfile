@@ -1,1 +1,1 @@
-web: gunicorn HandyRides.wsgi --log-file -
+web: gunicorn Gild.wsgi --log-file -
