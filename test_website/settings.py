@@ -16,7 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.join(BASE_DIR, "test_website")
-STATIC_ROOT = os.path.join(os.path.dirname(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(PROJECT_DIR, 'static'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
