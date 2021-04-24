@@ -1,1 +1,1 @@
-web: gunicorn Gild.wsgi --log-file -
+web: gunicorn gild.wsgi --log-file -
