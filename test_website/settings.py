@@ -136,8 +136,6 @@ STATICFILES_DIRS = [
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1','www.mygild.com','mygild.com']
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 #Django Auth Settings
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "public:index"
