@@ -1,5 +1,5 @@
 build:
-	docker build --force-rm $(options) -t test-website:latest .
+	docker build --force-rm $(options) -t gild:latest .
 
 build-prod:
 	$(MAKE) build options="--target production"

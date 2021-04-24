@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('test_website.apps.public.urls')),
-    path('accounts/', include('test_website.apps.accounts.urls')),
-    path('contact/', include('test_website.apps.contact.urls')),
+    path('', include('gild.apps.public.urls')),
+    path('accounts/', include('gild.apps.accounts.urls')),
+    path('contact/', include('gild.apps.contact.urls')),
 ]

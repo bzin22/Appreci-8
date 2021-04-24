@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_DIR = os.path.join(BASE_DIR, "test_website")
+PROJECT_DIR = os.path.join(BASE_DIR, "gild")
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'test_website.apps.accounts',
-    'test_website.apps.contact',
+    'gild.apps.accounts',
+    'gild.apps.contact',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'test_website.urls'
+ROOT_URLCONF = 'gild.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'test_website.wsgi.application'
+WSGI_APPLICATION = 'gild.wsgi.application'
 
 
 # Database

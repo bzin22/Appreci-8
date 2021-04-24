@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from django.core.mail import send_mail
 
-from test_website import settings
+from gild import settings
 from .forms import ContactForm
 
 def contact(request: HttpRequest) -> HttpResponse:
