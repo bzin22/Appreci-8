@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = os.path.join(BASE_DIR, "test_website")
-STATIC_ROOT = os.path.join(Path(__file__), 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
