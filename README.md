@@ -3,9 +3,11 @@ Initial set-up of Appreciation webpage
 
 ## Link to the live website
 [Link to the website](http://www.mygild.com)
+
 [Link to same website at heroku link](https://guarded-oasis-19453.herokuapp.com/)
 
 [See the google docs for more info on steps, as well as some screenshots](https://docs.google.com/document/d/1YyIzdYTXTHMGST9i7XrLBGXJBQP2-jouIFonMnoVpaQ/edit)
+
 ## 2021.04.23 Update
 Deployed to Heroku.
 
