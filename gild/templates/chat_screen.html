@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chat</title>
+</head>
+<body>
+<div style="height:500px;width:100%;overflow-y:scroll" id="div_data">
+	
+
+</div>
+<div>
+	<input type="text" name="message" id="message" placeholder="Message" style="padding:10px;width:100%">
+
+    <input type="button" value="Send Message" id="send_message" style="background:dodgerblue;color:#fff;padding:10px;border:0px;width:100%">
+    <script type="text/javascript">
+    	var roomname='{{ room_name }}';
+    	var personname='{{ person_name }}';
+        console.log(roomname);
+        console.log(personname);
+    	const chatSocket=new WebSocket('ws://'+window.location.host+'/chat/'+roomname+'/'+personname+'/');//+'/ws/chat/'+roomname+'/'+personname+'/');
+        console.log(chatSocket.url);
+        console.log(chatSocket.readyState);
+        chatSocket.onmessage=function(e){
+            console.log(e)
+        }
+        
+        chatSocket.onclose=function(e){
+            console.log(e)
+        }
+
+        document.querySelector("#send_message").onclick=function(e){
+            var message=document.querySelector("#message").value;
+            chatSocket.send(JSON.stringify({'message':message}))
+            document.querySelector("#message").value=''
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -27,8 +27,7 @@ SECRET_KEY = '^xcep@5rk(erkbr6rtxdpo8ecu$n)@vz#$h!^rko82lht(2gun'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1','www.mygild.com','mygild.com']
 
 # Application definition
 
@@ -41,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gild.apps.accounts',
     'gild.apps.contact',
+    'gild.apps.chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -134,12 +135,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1','www.mygild.com','mygild.com']
-
 #Django Auth Settings
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "public:index"
 LOGOUT_REDIRECT_URL = "public:index"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = "bryanzin7@gmail.com"
+# DEFAULT_FROM_EMAIL = "bryanzin7@gmail.com"
+DEFAULT_FROM_EMAIL = "rs36@princeton.edu"
+
+ASGI_APPLICATION="gild.apps.chat.routing.application"
+# CHANNEL_LAYER={
+#     "default":{
+#         "BACKEND":"channels.layers.InMemoryChannelLayer"
+#     }
+# }
