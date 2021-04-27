@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('gild.apps.public.urls')),
     path('accounts/', include('gild.apps.accounts.urls')),
     path('contact/', include('gild.apps.contact.urls')),
+    path('chat/', include('gild.apps.chat.urls')),
 ]
