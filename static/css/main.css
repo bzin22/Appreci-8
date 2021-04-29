@@ -19,6 +19,10 @@
     font-family: "Bryan's Website";
 }
 
+h2.page-section-heading{
+    padding-top: 25px!important;
+}
+
 .hs-bg-primary{
     background-color: #f35a5a;
 }
@@ -62,11 +66,11 @@
 }
 
 .masthead {
-    background-image: url("../img/cards.jpg");
+    background-image: url("../img/hex-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .masthead-heading{
-    color: black;
+    color: white;
 }

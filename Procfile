@@ -1,0 +1,1 @@
+web: gunicorn gild.wsgi --log-file -
