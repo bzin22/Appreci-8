@@ -27,7 +27,7 @@ SECRET_KEY = '^xcep@5rk(erkbr6rtxdpo8ecu$n)@vz#$h!^rko82lht(2gun'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1','www.mygild.com','mygild.com']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'www.mygild.com', 'mygild.com', 'localhost']
 
 # Application definition
 
